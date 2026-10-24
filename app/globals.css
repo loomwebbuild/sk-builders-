@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: "Cormorant Garamond", Georgia, serif;
+    --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --bg-canvas: #fbfbf9;
+    --text-charcoal: #141414;
+    --accent-olive: #5b6748;
+  }
+
+  html {
+    background-color: #fbfbf9;
+    color: #141414;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #fbfbf9;
+    color: #141414;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #5b6748;
+    color: #ffffff;
+  }
+}
+
+/* Lenis smooth scroll recommended styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom editorial typography utility classes */
+.font-serif-luxury {
+  font-family: var(--font-serif);
+}
+
+.font-sans-editorial {
+  font-family: var(--font-sans);
+}
+
+/* Thin architectural hairline borders */
+.border-hairline {
+  border-color: rgba(20, 20, 20, 0.08);
+}
+
+.border-hairline-dark {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Subtle image scale animation */
+@keyframes slowScale {
+  0% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-slow-scale {
+  animation: slowScale 3.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Bobbing scroll indicator */
+@keyframes bobbing {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 0.3;
+  }
+}
+
+.animate-bobbing {
+  animation: bobbing 2.2s ease-in-out infinite;
+}
